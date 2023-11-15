@@ -1,0 +1,9 @@
+on: push
+jobs:
+  deploy:
+    if: github.ref_name == 'main'
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./mvnw install
+      - run: docker compose up -d --build
