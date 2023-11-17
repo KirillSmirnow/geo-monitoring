@@ -14,13 +14,5 @@ services:
       - 127.0.0.1:27017:27017
     volumes:
       - mongo:/data/db
-  mongo-express:
-    image: mongo-express
-    restart: always
-    environment:
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_PASSWORD:-admin}
-    ports:
-      - 0.0.0.0:8081:8081
 volumes:
   mongo:
