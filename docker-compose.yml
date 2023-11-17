@@ -7,6 +7,13 @@ services:
     restart: always
     ports:
       - 0.0.0.0:8080:8080
+  output:
+    build:
+      args:
+        jar: geo-monitoring-output/target/*.jar
+    restart: always
+    ports:
+      - 0.0.0.0:8081:8080
   mongo:
     image: mongo
     restart: always
