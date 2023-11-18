@@ -21,7 +21,7 @@ object PositionSharer {
         this.enabled = false
         this.executor?.shutdown()
         val executor = Executors.newSingleThreadScheduledExecutor()
-        executor.scheduleWithFixedDelay({ sharePosition(activity) }, 1, 5, TimeUnit.SECONDS)
+        executor.scheduleWithFixedDelay({ sharePosition(activity) }, 1, 30, TimeUnit.SECONDS)
         this.executor = executor
     }
 

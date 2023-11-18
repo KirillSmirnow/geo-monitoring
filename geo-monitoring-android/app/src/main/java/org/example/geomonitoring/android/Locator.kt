@@ -37,7 +37,7 @@ object Locator {
 
     private fun findBestLocation(context: Context): Location {
         val client = LocationServices.getFusedLocationProviderClient(context)
-        val task = client.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, null)
+        val task = client.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null)
         val location = waitForCompletion(task, Duration.ofSeconds(3))
         return Location(location.latitude, location.longitude)
     }
