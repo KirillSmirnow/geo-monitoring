@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Monitoring</title>
+    <link
+            crossorigin=""
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            rel="stylesheet"
+    />
+    <script
+            crossorigin=""
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    ></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #controls {
+            width: 100%;
+        }
+
+        #map {
+            width: 100%;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <input id="token" placeholder="Access token" style="width: 260px">
+    <select id="object">
+        <option>ALL</option>
+        <option>kirill</option>
+        <option>Shurshurik</option>
+    </select>
+    <input id="interval" placeholder="Interval, hours" style="width: 90px" value="24">
+    <input checked id="auto" type="checkbox">
+    <label for="auto">Auto</label>
+    <button onclick="refresh()">Refresh</button>
+</div>
+<div id="map"></div>
+<script src="script.js"></script>
+</body>
+</html>
